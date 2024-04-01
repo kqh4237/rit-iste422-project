@@ -12,3 +12,28 @@ dependencies {
 }
 
 compileJava.options.encoding = 'UTF-8'
+
+task edgeTableTest(type: JavaExec){
+    classpath = sourceSets.test.runtimeClasspath
+    main = "EdgeTableTest"
+}
+
+task edgeFieldTest(type: JavaExec){
+    classpath = sourceSets.test.runtimeClasspath
+    main = "EdgeFieldTest"
+}
+
+task edgeConvertCreateDDLTest(type: JavaExec){
+    classpath = sourceSets.test.runtimeClasspath
+    main = "EdgeConvertCreateDDLTest"
+}
+
+task edgeConvertFileParserTest(type: JavaExec){
+    classpath = sourceSets.test.runtimeClasspath
+    main = "EdgeConvertFileParserTest"
+}
+
+task createDDLMySQLTest(type: JavaExec){
+    classpath = sourceSets.test.runtimeClasspath
+    main = "CreateDDLMySQLTest"
+}
