@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import javax.swing.*;
 
-public class EdgeConvertFileParser {
+public abstract class EdgeConvertFileParser {
   // private String filename = "test.edg";
   protected File parseFile;
   protected FileReader fr;
@@ -38,9 +38,7 @@ public class EdgeConvertFileParser {
     this.openFile(parseFile);
   }
 
-  public void parseEdgeFile() throws IOException {
-
-  } // parseEdgeFile()
+  public abstract void parseEdgeFile() throws IOException;
 
   private void resolveConnectors() { // Identify nature of Connector endpoints
     int endPoint1, endPoint2;
@@ -113,9 +111,7 @@ public class EdgeConvertFileParser {
     } // connectors for() loop
   } // resolveConnectors()
 
-  public void parseSaveFile() throws IOException { // this method is unclear and confusing in places
-
-  } // parseSaveFile()
+  abstract abstract void parseSaveFile() throws IOException;
 
   private void makeArrays() { // convert ArrayList objects into arrays of the appropriate Class type
     if (alTables != null) {
