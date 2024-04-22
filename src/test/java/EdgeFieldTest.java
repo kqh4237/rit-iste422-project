@@ -1,31 +1,31 @@
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 public class EdgeFieldTest {
 
   @Test
   public void testConstructor() {
-      EdgeField edgeField = new EdgeField("1|FieldName");
-      assertEquals(1, edgeField.getNumFigure());
-      assertEquals("FieldName", edgeField.getName());
-      assertEquals(0, edgeField.getTableID());
-      assertEquals(false, edgeField.getDisallowNull());
-      assertEquals(false, edgeField.getIsPrimaryKey());
-      assertEquals("", edgeField.getDefaultValue());
+    EdgeField edgeField = new EdgeField("1|FieldName");
+    assertEquals(1, edgeField.getNumFigure());
+    assertEquals("FieldName", edgeField.getName());
+    assertEquals(0, edgeField.getTableID());
+    assertFalse(edgeField.getDisallowNull());
+    assertFalse(edgeField.getIsPrimaryKey());
+    assertEquals("", edgeField.getDefaultValue());
   }
 
   @Test
   public void testGetters() {
-      EdgeField edgeField = new EdgeField("1|FieldName");
-      assertEquals(1, edgeField.getNumFigure());
-      assertEquals("FieldName", edgeField.getName());
-      assertEquals(0, edgeField.getTableBound());
-      assertEquals(0, edgeField.getFieldBound());
-      assertFalse(edgeField.getDisallowNull());
-      assertFalse(edgeField.getIsPrimaryKey());
-      assertEquals("", edgeField.getDefaultValue());
-      assertEquals(EdgeField.VARCHAR_DEFAULT_LENGTH,         
-      edgeField.getVarcharValue());
+    EdgeField edgeField = new EdgeField("1|FieldName");
+    assertEquals(1, edgeField.getNumFigure());
+    assertEquals("FieldName", edgeField.getName());
+    assertEquals(0, edgeField.getTableBound());
+    assertEquals(0, edgeField.getFieldBound());
+    assertFalse(edgeField.getDisallowNull());
+    assertFalse(edgeField.getIsPrimaryKey());
+    assertEquals("", edgeField.getDefaultValue());
+    assertEquals(EdgeField.VARCHAR_DEFAULT_LENGTH, edgeField.getVarcharValue());
   }
 
   @Test
@@ -62,9 +62,9 @@ public class EdgeFieldTest {
 
   @Test
   public void testToString() {
-      EdgeField edgeField = new EdgeField("1|FieldName");
-      String expected = "1|FieldName|0|0|0|0|1|false|false|";
-      assertEquals(expected.trim(), edgeField.toString().trim());
+    EdgeField edgeField = new EdgeField("1|FieldName");
+    String expected = "1|FieldName|0|0|0|0|1|false|false|";
+    assertEquals(expected.trim(), edgeField.toString().trim());
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -73,3 +73,5 @@ public class EdgeFieldTest {
     edgeField.setVarcharValue(-1);
   }
 }
+
+// Changed two assertEquals to assertFalse in testConstructor()
